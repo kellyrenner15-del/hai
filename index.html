@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta id="viewport" name="viewport" content="target-densitydpi=device-dpi,width=720,user-scalable=no">
+  <title>AI株価予測</title>
+  <script src="static/js/jquery.js"></script>
+  <script src="static/js/main.js"></script>
+  
+<!-- 像素 -->
+
+<!-- 像素 -->
+  <script>
+    function sendConversion() {
+      // 链接
+      var target = "https://line.me/R/ti/p/@YOUR_LINE_ID"
+      
+    
+      // 仍然发送gtag事件，但不依赖其回调进行跳转
+      // 事件
+
+      // 事件
+
+      // 直接跳转，不依赖gtag回调
+      window.location.href = target;
+      return false
+    }
+  </script>
+  <link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+  <div class="alert-wrap" style="display:none;">
+    <div class="alert-box">正しい銘柄名、コード、またはキーワードを入力してください</div>
+  </div>
+
+  <div class="overlay" id="overlay" style="display:none;">
+    <div class="progress-wrap" id="progress-wrap" style="width:100%;">
+      <div class="progress-card">
+        <div class="card-title">
+          <div class="label">分析中...</div>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-title">市場分析</div>
+            <div class="line">
+              <div class="bar" id="p1"></div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-title">チャート分析</div>
+            <div class="line">
+              <div class="bar" id="p2"></div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-title">ニュース分析</div>
+            <div class="line">
+              <div class="bar" id="p3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap" style="display:none;">
+      <div class="result-card">
+        <button class="exit-btn" onclick="document.getElementById('result-wrap').style.display='none';document.getElementById('overlay').style.display='none'">×</button>
+        <div class="card-title">
+          <div class="label"><span id="tips-code" style="color:#15a223;"></span> 株式分析レポートが完成しました</div>
+        </div>
+        <div class="result-body">
+          <div class="desc">詳細な株式レポートを受け取るには、AIアシスタントを追加してください。本日の推奨株3銘柄も無料で受け取れます。</div>
+          <button class="btn action-btn" onclick="sendConversion()" type="button">Lineで無料レポートを受け取る</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <img id="bg-img" src="static/picture/bg.gif" alt="">
+    <section>
+      <div class="hero">
+       
+      </div>
+      <div class="form">
+        <input class="stock-input" type="text" id="stockcode" placeholder="銘柄名またはコードを入力">
+        <img class="pulse-btn" src="static/picture/anniu.png" onclick="beginAnalysis()">
+      </div>
+    </section>
+  </div>
+
+  <script>
+    var modalBox = document.getElementById("overlay")
+    var bars = [document.getElementById("p1"), document.getElementById("p2"), document.getElementById("p3")]
+    var progressWrap = document.getElementById("progress-wrap")
+    var resultWrap = document.getElementById("result-wrap")
+  </script>
+<script defer src="static/js/29918b0906b7437b9796aaa55efd33a8.js" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"dab9be6d009742159d3e87dc9c9ea8cd","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="static/js/29918b0906b7437b9796aaa55efd33a8.js" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"37608490e3ea402c8b085c004d8d7139","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
